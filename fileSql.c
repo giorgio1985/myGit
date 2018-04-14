@@ -27,7 +27,7 @@ int main() {
     char *user = PQuser(conn);
     char *dbNome = PQdb(conn);
     char *psw = PQpass(conn);
-    printf("Parametri di connessione utilizzando sia peer che md5 modificabili nel file di configurazione pg_hba.conf\n");
+    printf("Parametri di connessione utilizzando sia peer oppure md5 modificabili nel file di configurazione pg_hba.conf\n");
     printf("User: %s\n", user);
     printf("Database name: %s\n", dbNome);
     printf("Password: %s\n", psw);
@@ -36,4 +36,8 @@ int main() {
     PQfinish(conn);
 
     return 0;
+
+
+// La creazione delle tabelle segue la stessa logica di tutti i sistemi RDMS ..    giorgio1985 :-) ...
+
 }
