@@ -32,12 +32,21 @@ int main() {
     printf("Database name: %s\n", dbNome);
     printf("Password: %s\n", psw);
     printf("Se qualcosa dovesse andare storto spesso bisogna controllare l\' ordine dei parametri della funzione PQconnectdb:\n"); 
+        
+
+    res = PQexec(conn, "CREATE TABLE Dipendente(Id INTEGER PRIMARY KEY," \
+        "Nome VARCHAR(20), Cognome VARCHAR(30))");
+        
+    if (PQresultStatus(res) != PGRES_COMMAND_OK) {
+        esci(conn, res); 
+    }
     
+    PQclear(res);
     PQfinish(conn);
 
     return 0;
 
 
-// La creazione delle tabelle segue la stessa logica di tutti i sistemi RDMS ..    giorgio1985 :-) ...
+// La gestione delle tabelle segue la stessa logica di tutti i sistemi RDMS ..    giorgio1985 :-) ...
 
 }
