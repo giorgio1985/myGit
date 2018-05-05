@@ -1,3 +1,5 @@
+<?php
+// giorgio1985
 include 'dbConnector.php';
 //for the usual users
 if(isset($_POST['username'])&&($_POST['email'])){

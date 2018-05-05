@@ -1,4 +1,5 @@
 function funzione(){
+	//giorgio1985
 $(document).ready(function(){
 $("#mioform").click(function(){
 var username = $("#username").val();

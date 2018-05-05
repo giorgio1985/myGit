@@ -1,5 +1,6 @@
 <?php
 //this file is used for the first users login
+//giorgio1985
 include 'dbConnector.php';
 
 if(isset($_POST['nome'], $_POST['cognome'],$_POST['username'], $_POST['email'])){
