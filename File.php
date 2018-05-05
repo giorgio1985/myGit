@@ -5,7 +5,7 @@ include 'dbConnector.php';
 if(isset($_POST['username'])&&($_POST['email'])){
 $username = $_POST['username'];
 $email = $_POST['email'];
-$sql="SELECT username, email FROM firstLogin; # WHERE username=$username AND email=$email";
+$sql="SELECT nome, cognome, username, email FROM firstLogin WHERE username='$username' AND email='$email'";
 $result=mysqli_query($conn,$sql);
 if($result){
 echo 'Benvenuto  ' .$_POST['username'];
@@ -20,6 +20,10 @@ while ($row=mysqli_fetch_assoc($result)) {
 	echo '<br>';
 	echo $row['email'];
 	echo '<br>';
+	echo $row['nome'];
+	echo '<br>';
+	echo $row['cognome'];
+	echo '-------------';
    }
 }
 }
