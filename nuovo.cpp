@@ -1,31 +1,34 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 using namespace std;
 
 class FiguraGeometrica{
-public: int base, altezza;
-public: int getBase();
-public: int getAltezza();
+
+public: void inserisciBase(){ cout <<"Inserisci la base della figura geometrica da analizzare\n"; }
+public: void inserisciAltezza(){ cout <<"Inserisci l\' altezza della figura\n"; }
+
 };
 
-int FiguraGeometrica :: getBase(){
-cout <<"Inserisci la base\n";
-cin >> base;
-cout << "per la base hai inserito il valore : "<<base<<endl;
-return base;
-}
-
-int FiguraGeometrica :: getAltezza(){
-cout <<"Inserisci l altezza\n";
-cin >> altezza;
-cout <<"Per l altezza hai inserito il valore : "<<altezza<<endl;
-return altezza;
-}
+class Rettangolo : public FiguraGeometrica{
+int base, altezza;
+public: int stampaBase(int base){ return base; }
+public: int stampaAltezza(int altezza){ return altezza; }
+};
 
 int main(){
-FiguraGeometrica f1;
-int area;
-area = f1.getBase() * f1.getAltezza();
-cout <<"L area risulta essere di: "<<area;
+Rettangolo f1;
+int b,h;
+int ba,al;
+
+f1.inserisciBase();
+cin >> b;
+f1.inserisciAltezza();
+cin >> h;
+
+ba = f1.stampaBase(b);
+al = f1.stampaAltezza(h);
+cout <<ba*al;
+
 return 0;
 }
+
