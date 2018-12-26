@@ -3,32 +3,43 @@
 using namespace std;
 
 class FiguraGeometrica{
-
-public: void inserisciBase(){ cout <<"Inserisci la base della figura geometrica da analizzare\n"; }
-public: void inserisciAltezza(){ cout <<"Inserisci l\' altezza della figura\n"; }
-
+public: int base, altezza;
+public: int calcolaAreaRettangolo();
+public: int calcolaAreaTriangolo();
 };
 
 class Rettangolo : public FiguraGeometrica{
-int base, altezza;
-public: int stampaBase(int base){ return base; }
-public: int stampaAltezza(int altezza){ return altezza; }
+public: int calcolaAreaRettangolo(){
+int areaRettengolo;
+cout <<"Inserisci il valore di una base per il rettangolo \n";
+cin >> base;
+cout <<"Inserisci il valore dell\'altezza per il rettangolo \n";
+cin >> altezza;
+areaRettengolo = base * altezza;
+cout << areaRettengolo;
+}
+};
+
+class Triangolo : public FiguraGeometrica{
+public: int calcolaAreaTriangolo(){
+int areaTriangolo;
+cout <<"Inserisci un valore di una base per il triangolo \n";
+cin >> base;
+cout <<"Inserisci un valore altezza per il triangolo \n";
+cin >> altezza;
+areaTriangolo = (base * altezza)/2;
+cout << areaTriangolo;
+}
 };
 
 int main(){
-Rettangolo f1;
-int b,h;
-int ba,al;
+Rettangolo r1,r2;
+Triangolo t1;
 
-f1.inserisciBase();
-cin >> b;
-f1.inserisciAltezza();
-cin >> h;
+r1.calcolaAreaRettangolo();
+r2.calcolaAreaRettangolo();
 
-ba = f1.stampaBase(b);
-al = f1.stampaAltezza(h);
-cout <<ba*al;
-
+t1.calcolaAreaTriangolo();
 return 0;
 }
 
