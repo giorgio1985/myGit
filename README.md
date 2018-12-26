@@ -1,6 +1,6 @@
 # myGit
 My personal git.
-bootstrap init (vademecum)...
+bootstrap init (vademecum)...  https://sourceforge.net/projects/codeblocks/  ....
 
 
 
@@ -8,6 +8,10 @@ You should extract downloaded archive with
 
 cd ~/Downloads
 wget https://kent.dl.sourceforge.net/project/codeblocks/Binaries/17.12/Linux/Debian%20stable/codeblocks_17.12-1_amd64_stable.tar.xz
+
+
+
+
 tar -xf codeblocks_17.12-1_amd64_stable.tar.xz
 
 Then install extracted deb-packages:
